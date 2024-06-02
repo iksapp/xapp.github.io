@@ -1,11 +1,14 @@
 {
   "files": {
     "main.css": "/static/css/main.42e4286e.css",
-    "main.js": "/static/js/main.97d8db1a.js",
+    "main.js": "/static/js/main.8e0386eb.js",
+    "static/media/melih.jpg": "/static/media/melih.aa5bc9d8ac3e737879b1.jpg",
+    "static/media/muratcan.jpg": "/static/media/muratcan.ac8894b9ae43ad9bdc7c.jpg",
+    "static/media/fevzi.jpeg": "/static/media/fevzi.74e845da687c3041e1ef.jpeg",
     "index.html": "/index.html"
   },
   "entrypoints": [
     "static/css/main.42e4286e.css",
-    "static/js/main.97d8db1a.js"
+    "static/js/main.8e0386eb.js"
   ]
 }
