@@ -2,6 +2,59 @@ import React from "react";
 import "./style.css";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import { Container, Row, Col } from "react-bootstrap";
+import ProfileImageFevzi from "../../assets/pp/fevzi.jpeg";
+import ProfileImageMuratcan from "../../assets/pp/muratcan.jpg";
+import ProfileImageMelih from "../../assets/pp/melih.jpg";
+
+
+import { FaTwitter, FaInstagram, FaLinkedin } from 'react-icons/fa';
+
+const Profile = ({ name, imgSrc, twitter, instagram, linkedin }) => {
+  return (
+    <Col md={10} className="mb-5">
+      <Row>
+        <Col md={4} className="mb-5">
+          <div className="profile-img-container">
+            <img src={imgSrc} alt={name} className="profile-img" style={{ height: 200, width: 200, borderRadius: 500, marginTop: 10 }} />
+          </div>
+        </Col>
+        <Col md={7} className="mb-5">
+          <div className="profile-container">
+            <div className="profile-img-container" style={{ width: 500 }}>
+              <p className="profile-name" style={{ fontSize: 50 }}>{name}</p>
+            </div>
+            <div className="profile-links">
+              {twitter && (
+                <Row className="mb-2">
+                  <a href={twitter} target="_blank" rel="noopener noreferrer" style={{ fontSize: 20, textDecoration: 'none', color: 'white', transition: 'color 0.3s' }} onMouseOver={(e) => e.target.style.color = 'pink'} onMouseOut={(e) => e.target.style.color = 'white'}>
+                    <FaTwitter className="icon" size={25} style={{ marginRight: 10 }} /> Twitter
+                  </a>
+                </Row>
+              )}
+              {instagram && (
+                <Row className="mb-2">
+                  <a href={instagram} target="_blank" rel="noopener noreferrer" style={{ fontSize: 20, textDecoration: 'none', color: 'white', transition: 'color 0.3s' }} onMouseOver={(e) => e.target.style.color = 'pink'} onMouseOut={(e) => e.target.style.color = 'white'}>
+                    <FaInstagram className="icon" size={25} style={{ marginRight: 10 }} /> Instagram
+                  </a>
+                </Row>
+              )}
+              {linkedin && (
+                <Row className="mb-2">
+                  <a href={linkedin} target="_blank" rel="noopener noreferrer" style={{ fontSize: 20, textDecoration: 'none', color: 'white', transition: 'color 0.3s' }} onMouseOver={(e) => e.target.style.color = 'pink'} onMouseOut={(e) => e.target.style.color = 'white'}>
+                    <FaLinkedin className="icon" size={25} style={{ marginRight: 10 }} /> Linkedin
+                  </a>
+                </Row>
+              )}
+            </div>
+          </div>
+        </Col>
+      </Row>
+    </Col>
+  );
+};
+
+
+
 
 export const About = () => {
   return (
@@ -67,12 +120,38 @@ export const About = () => {
             <strong className="display-6 mb-5">PROJECT DESIGN PHASE</strong><br /><br/>
             In collaboration with TUSAŞ, efforts were made to create our application to be both user-friendly and efficient. During this process, feedback was gathered from people who had previously used similar applications and regular mobile application users. As a result of the feedback and research conducted, it was determined how the application could be more effective and simpler to use.
           </p>
-                    <p style={{ fontSize: "1.2rem" }}>
+          <p style={{ fontSize: "1.2rem" }}>
 
-          <br/><br/><br/>
+            <br/><br/><br/>
             <strong className="display-6 mb-5">CONCLUSION AND EXPECTED IMPACT</strong><br /><br/>
             This mobile application aims to facilitate the management of entrepreneurship and innovation programs, ensuring that participants gain more benefits from the programs. With effective communication, easy access, and a user-friendly interface, it is expected to increase the success of the programs. Additionally, this type of application is hoped to serve as a model for other similar organizations and contribute to the widespread adoption of innovation.
           </p>
+        </Row>
+        <Row className="mt-5">
+        <strong className="display-6 mb-5">PROJECT DEVELOPERS</strong><br /><br/><br/><br/><br/><br/>
+          <Profile
+            name="Fevzi KILAS"
+            imgSrc={ProfileImageFevzi}
+            twitter="https://twitter.com/iksapp"
+            instagram="https://www.instagram.com/niexche"
+            linkedin="https://www.linkedin.com/in/fevzi-k%C4%B1las-6b857b19a"
+          />
+          </Row>
+          <Row className="mt-5">
+          <Profile
+            name="Muratcan Baştuğ"
+            imgSrc={ProfileImageMuratcan}
+            instagram="https://www.instagram.com/muratcanbastug"
+            linkedin="https://www.linkedin.com/in/murat-can-bastug-9940a11b4"
+          />
+           </Row>
+          <Row className="mt-5">
+          <Profile
+            name="Melih Meral"
+            imgSrc={ProfileImageMelih}
+            instagram="https://www.instagram.com/melihmerall"
+            linkedin="https://www.linkedin.com/in/melih-meral"
+          />
         </Row>
       </Container>
     </HelmetProvider>
